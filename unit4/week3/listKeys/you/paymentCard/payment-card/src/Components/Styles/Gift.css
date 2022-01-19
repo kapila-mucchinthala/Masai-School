@@ -1,0 +1,46 @@
+.logoImage{
+    float: right;
+    margin: 5px 5px 0 0;
+    height: 100px;
+    width: 100px;
+}
+.dateOnCard{
+    float: left;
+    margin-top: 20px;
+    padding-top: 10px;
+    height: 30px;
+    width: 150px;
+    /* border: 1px solid black; */
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.heading{
+    /* border: 1px solid red; */
+    margin-top: 20px;
+    height: 40px;
+    width: 300px;
+    font-size: 35px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.subHead{
+    /* border: 1px solid red; */
+    margin-top: 20px;
+    height: 40px;
+    width: 300px;
+    font-size: 35px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.device{
+    margin-top: 20px;
+    height: 40px;
+    width: 300px;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
