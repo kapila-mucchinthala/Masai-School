@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     #board{
+         width: 40%;
+         height: 600px;
+         
+     }
+     #minEle{
+         width: 50px;
+         height: 50px;
+         background-color:red;
+         border: 2px solid black;
+         padding: 10px 20px;
+         text-align: center;
+         /* font-family: 'Courier New', Courier, monospace; */
+         font-weight: 600;
+          float: left;
+          margin-left: 130px;
+        
+     }
+      #maxEle{
+         width: 50px;
+         height: 50px;
+         background-color:rgb(32, 175, 32);
+         border: 2px solid black;
+         padding: 10px 20px;
+         padding-right: 30px;
+         text-align: center;
+         float: left;
+         margin-left: 120px;
+
+     }
+    
+     .box{
+         width: 100%;
+         height: 120px;
+         
+     }
+     #display{
+         background-color: rgb(185, 180, 180);
+         width: 160px;
+         height: 60px;
+         margin: auto;
+          border: 2px solid black;
+          text-align: center;
+     }
+     .green{
+         width: 50px;
+         height: 50px;
+         text-align: center;
+         margin: 10px;
+         background-color: rgb(20, 192, 20);
+         font-size: 20px;
+     }
+     .orange{
+         width: 50px;
+         height: 50px;
+         text-align: center;
+         margin: 10px;
+         background-color: rgb(255, 136, 0);
+          font-size: 20px;
+     }
+     .numbox{
+         margin-top: 10px;
+         margin-left: 180px;
+     }
+     .zero{
+          width: 50px;
+         height: 50px;
+         text-align: center;
+         margin: 10px;
+         background-color: rgb(255, 94, 0);
+          font-size: 20px;
+           margin-left: 265px;
+     }
+    .enter{
+         width: 200px;
+         height: 50px;
+         text-align: center;
+         margin: 10px;
+         background-color: rgb(15, 15, 15);
+          font-size: 20px;
+           margin-left: 190px;
+           color: white;
+           border: none;
+    }
+    
+    </style>
+</head>
+<body>
+    <div id="board">
+
+    <div class="box">
+    <div class="box1">
+    <h1 id="minEle">43</h1>
+    </div>
+
+    <div class="box2">
+    <h1 id="maxEle">2019</h1>
+    </div>
+    </div>
+
+    <div>
+    <h2 id="display"></h2>
+    <div class="numbox">
+    <button onclick="btn_click(1)" class="green">1</button>
+    <button onclick="btn_click(2)" class="orange">2</button>
+    <button onclick="btn_click(3)" class="green">3</button><br>
+    <button onclick="btn_click(4)" class="orange">4</button>
+    <button onclick="btn_click(5)" class="green">5</button>
+    <button onclick="btn_click(6)" class="orange">6</button><br>
+    <button onclick="btn_click(7)" class="green">7</button>
+    <button onclick="btn_click(8)" class="orange">8</button>
+    <button onclick="btn_click(9)" class="green">9</button><br>
+    </div>
+    <button onclick="btn_click(0)" class="zero">0</button><br>
+    <button onclick="enter()" class="enter">Enter</button>
+    </div>
+
+    </div>
+
+    <script>
+        var min = 143;
+        var max = 2019;
+        var output = "";
+        var display = document.getElementById("display");
+        
+        function btn_click(num){
+            output = output+num;
+            display.textContent = output;
+        }
+
+        function enter(){
+            var fn = Number(output);
+            if(fn<min){
+                min = fn;
+                document.getElementById("minEle").textContent = min;
+            }
+             if (fn > max) {
+                max = fn;
+                document.getElementById("maxEle").textContent = max;
+            }
+            output = "";
+            display.textContent = output;
+        }
+    </script>
+</body>
+</html>

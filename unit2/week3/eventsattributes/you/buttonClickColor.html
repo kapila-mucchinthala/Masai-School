@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Change the buttons text color random value</h1>
+    <button onclick="textColor()" id="btn1">Click here to change my color</button>
+    <button onclick="background()" id="btn2">Click me to change my color to an array value!</button>
+    <script>
+        function textColor(){
+           let btn = document.getElementById("btn1");
+           let randomTextColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+           btn.style.color = randomTextColor;
+        }
+        function random(number){
+            return Math.floor(Math.random()*number);
+        }
+
+       var count =0;
+        function background(){
+              let btn = document.getElementById("btn2");
+              var colors = ['red','blue','green','yellow','orange','purple'];
+              var n = colors.length;
+              btn.style.background = colors[count];
+              count++;
+                 
+              if(count==n){
+                  count=0;
+               }
+              
+        }
+           
+
+    </script>
+</body>
+</html>

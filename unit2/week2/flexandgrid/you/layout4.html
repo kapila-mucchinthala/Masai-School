@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #template {
+            margin: auto;
+            display: grid;
+            gap: 20px;
+             padding: 1% ;
+             margin-top: 1%;
+            font-size: 30px;
+        }
+
+        #navigation {
+            background-color: yellow;
+            height: 150px;
+            grid-area: n;
+        }
+
+        #box1 {
+            background-color: red;
+            height: 250px;
+            grid-area: b1;
+        }
+
+        #box2 {
+            background-color: lightgreen;
+            height: 250px;
+            grid-area: b2;
+        }
+         #box3 {
+            background-color:blue;
+            height: 250px;
+            grid-area: b3;
+        }
+         #box4 {
+            background-color:grey;
+            height: 250px;
+            grid-area: b4;
+        }
+
+        @media(max-width: 600px) {
+            #template {
+                grid-template: 'n'
+                               'b1'
+                               'b4'
+                               'b2'
+                               'b3';
+            }
+        }
+
+        @media(min-width: 600px) {
+            #template {
+                grid-template: 'n n'
+                               'b1 b3'
+                               'b2 b4';
+            }
+        }
+        @media(min-width: 992px) {
+            #template {
+                grid-template: 'n n n n'
+                               'b1 b2 b3 b4';
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="template">
+        <div id="navigation">Navigation</div>
+        <div id="box1">BOX 1</div>
+        <div id="box2">BOX 2</div>
+        <div id="box3">BOX 3</div>
+        <div id="box4">BOX 4</div>
+    </div>
+</body>
+
+</html>

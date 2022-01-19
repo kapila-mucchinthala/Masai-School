@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #template{
+          display: grid;
+          gap: 20px;
+          font-size: 30px;
+      }
+      #top{
+          background-color: yellow;
+          height: 100px;
+          grid-area: t;
+      }
+      #left{
+          background-color: red;
+          height: 400px;
+          grid-area: l;
+      }
+       #right{
+          background-color:greenyellow;
+          height: 400px;
+          grid-area: r;
+      }
+
+      @media screen and (max-width: 600px){ 
+          #template{
+              grid-template:'t'
+                             'r'
+                             'l';
+             
+          }
+      } 
+      @media screen and (min-width: 600px){
+          #template{
+              grid-template:'t t'
+                             'l r';
+                             
+          }
+          #left{
+              height: 700px;
+          }
+           #right{
+              height: 700px;
+          }
+      } 
+    </style>
+</head>
+<body>
+    <div id="template">
+        <div id="top">Navigation</div>
+        <div id="left">LEFT BOX</div>
+        <div id="right">RIGHT BOX</div>
+    </div>
+</body>
+</html>

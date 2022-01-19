@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #data{
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20%;
+            grid-gap: 5%;
+        }
+
+        img{
+            width: 40%;
+        }
+        
+        #data div{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+   <h1>Products Inventory</h1>
+   <div id="data"></div>
+
+
+    <script>
+        //create a mock data of products. Store in localStorage, display it on webpage.
+        //1. create products data - array of objects
+        const detergents = [
+            {
+               name:'Nirma',
+               price:'10',
+               image:'https://www.linkpicture.com/q/washing_powder_2.png' 
+            },
+            {
+                name: 'Surf Excel',
+                price: '20',
+                image: 'https://www.linkpicture.com/q/washing_powder_2.png'
+            },
+            {
+                name: 'Tide',
+                price: '30',
+                image: 'https://www.linkpicture.com/q/washing_powder_2.png'
+            }, 
+            {
+                name: 'Ghadi',
+                price: '40',
+                image: 'https://www.linkpicture.com/q/washing_powder_2.png'
+            },
+            {
+                name: 'Ariel',
+                price: '50',
+                image: 'https://www.linkpicture.com/q/washing_powder_2.png'
+            },
+            {
+                name: 'Wheel',
+                price: '60',
+                image: 'https://www.linkpicture.com/q/washing_powder_2.png'
+            }
+        ];
+
+        //step2 - convert to JSON
+
+        const detergents_json = JSON.stringify(detergents);
+        // console.log(detergents_json);
+
+        //step3 - store above data in localStorage
+
+        localStorage.setItem("myDetergents",detergents_json);
+        
+        //step4 - display on webpage
+
+        let myDetergents = localStorage.getItem("myDetergents");
+
+       // step4.1 - convert into objects
+
+       myDetergents = JSON.parse(myDetergents);
+        //console.log(myDetergents);
+
+        function showProducts(){
+            let data_div = document.getElementById("data");
+
+            myDetergents.forEach(function(product){
+              
+               // console.log(product);
+
+               let div = document.createElement("div");
+               let p_name = document.createElement("p");
+               p_name.innerText = product.name;
+               let p_price = document.createElement("p");
+               p_price.innerText = product.price;
+               let image = document.createElement("img");
+               image.src = product.image;
+               let btn = document.createElement("button");
+               btn.innerText = 'Add to Cart';
+
+               btn.onclick = function(){
+                   addToCart(product);
+               }
+
+               div.append(image,p_name,p_price,btn);
+
+               data_div.append(div);
+
+                
+            });
+        }
+        showProducts()
+
+        localStorage.setItem("cart",JSON.stringify([]));
+
+        function addToCart(p){
+            //need the details of specific products
+            //console.log("clicked");
+            //console.log(p);
+            // we need to store - array of objects - localstorage
+            //add the products to the cart
+
+            let cart_data = JSON.parse(localStorage.getItem("cart")); //got it in array format
+            
+        }
+
+    </script>
+
+</body>
+</html>

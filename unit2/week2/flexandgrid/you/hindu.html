@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hindu</title>
+    <style>
+        body {
+            margin: 20px auto;
+            background-color: #F5F5F5;
+            display: grid;
+            padding: 10px;
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+            grid-gap: 3px;
+            grid-template:
+                "headline"
+                "n1"
+                "n2"
+                "n3"
+                "n4"
+                "n5";
+        }
+
+        #headline {
+            grid-area: headline;
+            background-color: rgb(30, 30, 78);
+            color: white;
+            padding-bottom: 10px;
+            margin: 10px;
+        }
+
+        #headline img {
+            width: 100%;
+        }
+
+        #headline>h5,
+        #headline>p {
+            margin: 2px 20px;
+            ;
+        }
+
+        h2 {
+            margin-left: 20px;
+        }
+
+        .quickNews img {
+            width: 170px;
+            height: 100px;
+            float: left;
+
+            margin-right: 10px;
+        }
+
+        .quickNews>h5 {
+            color: blue;
+            margin: 9px 0px 0px;
+        }
+
+        .quickNews {
+            width: 97%;
+            background-color: #FFFFFF;
+            height: 100px;
+
+            margin: 10px;
+        }
+
+        #n1 {
+            grid-area: n1;
+        }
+
+        #n2 {
+            grid-area: n2;
+        }
+
+        #n3 {
+            grid-area: n3;
+        }
+
+        #n4 {
+            grid-area: n4;
+        }
+
+        #n5 {
+            grid-area: n5;
+        }
+
+        @media only screen and (min-width: 768px) {
+            body {
+                grid-template-columns: 50% 50% !important;
+                grid-template-rows: auto;
+                grid-template:
+                    "headline headline"
+                    "n1 n2"
+                    "n3 n4"
+            }
+
+            #n5 {
+                display: none;
+            }
+        }
+
+        @media only screen and (min-width: 992px) {
+            body {
+                grid-template-columns: 50% 50% !important;
+                grid-template-rows: auto;
+                grid-template:
+                    "headline n2"
+                    "headline n3"
+                    "headline n4"
+                    "n1 n5"
+            }
+
+            #n5 {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(252, 247, 247);">
+    <div id="headline">
+        <img
+            src="https://www.aljazeera.com/wp-content/uploads/2021/01/2021-01-24T150415Z_186235020_RC2FEL9VLSK9_RTRMADP_3_INDIA-FARMERS-PROTESTS.jpg?resize=1200%2C630" />
+        <h2>Ahmedabad joint rally with Trump will be historic, says Modi</h2>
+        <h5>KALLOL BHATTACHERJEE,BR.<br>SUSHASINI HAIDAR</h5>
+        <p>U.S president to visit Sabarmati Ashram ahead of'Namaste Trump' event</p>
+    </div>
+    <div id="n1" class="quickNews">
+        <img
+            src="https://thumbs.dreamstime.com/b/indian-rally-kolkata-february-vendor-looking-customers-amongst-crowd-political-kolkata-india-february-35585956.jpg" />
+        <h5>NATIONAL</h5>
+        <p>Ahmedabad glitters to welcome Donald Trump</p>
+    </div>
+    <div id="n2" class="quickNews">
+        <img src="https://aniportalimages.s3.amazonaws.com/media/details/813999b0-5add-40dd-bbdb-01325c44b466.jpg" />
+        <h5>NATIONAL</h5>
+        <p>Ahmedabad glitters to welcome Donald Trump</p>
+    </div>
+    <div id="n3" class="quickNews">
+        <img
+            src="https://cms.qz.com/wp-content/uploads/2019/03/RTS1CKQ5-e1553551367569.jpg?quality=75&strip=all&w=1600&h=900&crop=1" />
+        <h5>NATIONAL</h5>
+        <p>Ahmedabad glitters to welcome Donald Trump</p>
+    </div>
+    <div id="n4" class="quickNews">
+        <img src="https://kikali.in/wp-content/uploads/2017/07/ncc.jpg" />
+        <h5>NATIONAL</h5>
+        <p>Ahmedabad glitters to welcome Donald Trump</p>
+    </div>
+    <div id="n5" class="quickNews">
+        <img src="https://www.oneindia.com/img/2018/09/ncc-1537523780.jpg" />
+        <h5>NATIONAL</h5>
+        <p>Ahmedabad glitters to welcome Donald Trump</p>
+    </div>
+</body>
+
+</html>

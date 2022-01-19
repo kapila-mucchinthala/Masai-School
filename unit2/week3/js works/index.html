@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            margin: 10px;
+            background-color: rgb(184, 59, 28);
+            border: none;
+            color: white;
+            border-radius: 5px;
+        }
+        p{
+            color: rgb(38, 0, 255);
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="objects()">Objects</button>
+    <button onclick="arrays()">Arrays</button>
+    <button onclick="functions()">Functions</button>
+    <button onclick="strings()">Strings</button>
+    <button onclick="numbers()">Numbers</button>
+    <button onclick="nulls()">null</button>
+    <button onclick="undefineds()">undefined</button>
+
+
+    <script>
+        
+        var parent = document.querySelector('body');
+        var child = document.createElement('p');
+       
+        function objects(){
+            child.innerHTML = `<ul>
+            <li>An object in JavaScript contains key-value pairs in its address.</li>
+            <li>We can change or mutate the value of object</li>
+            <li>Objects hold the location of the value.</li>
+            <li>Mutable</li>
+            </ul>`;
+            parent.append(child);
+
+        }
+
+        function arrays() {
+            child.innerHTML = `<ul>
+            <li>An array stores multiple values using special syntax.</li>
+            <li>Arrays hold the location of the value.</li>
+            <li>Mutable</li>
+            </ul>`;
+            parent.append(child);
+
+        }
+
+        function functions() {
+            child.innerHTML = `<ul>
+                                  <li>Executes a block of codes.</li>
+                                  <li>Functions hold the location of the value.</li>
+                                  <li>Mutable</li>
+                                   </ul>`;
+
+            parent.append(child);
+
+        }
+
+        function strings(){
+            child.innerHTML = `<ul>
+            <li>Strings are sequence of characters.</li>
+            <li>Strings hold the actual value.</li>
+            <li>Immutable</li>
+            </ul>`;
+            parent.append(child);
+
+        }
+
+        function numbers(){
+            child.innerHTML = `<ul>
+            <li>A number data type can be an integer, a floating point value, an exponential value, a ‘NaN’ or a ‘Infinity’.</li>
+            <li>There are special numeric values e.g. NaN and Infinity.</li>
+            <li>Numbers hold the actual value.</li>
+            <li>Immutable</li>
+            </ul>`;
+
+            parent.append(child);
+        }
+
+        function nulls() {
+            child.innerHTML = `<ul>
+            <li>The null in JavaScript is a data type that is represented by only one value, the ‘null’ itself. </li>
+            <li> A null value means no value.</li>
+            <li>Assigning this value to the variable or object to wipe out all the data in it.</li>
+            <li>Immutable</li>
+            </ul>`;
+
+            parent.append(child);
+        }
+
+        function undefineds() {
+            child.innerHTML = `<ul>
+            <li>Undefined data type means a variable that is not defined.</li>
+            <li>The variable is declared but doesn’t contain any value.</li>
+            <li>Immutable</li>
+            </ul>`;
+
+            parent.append(child);
+        }
+       
+
+    </script>
+</body>
+</html>

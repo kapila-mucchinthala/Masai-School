@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 40%;
+            height: 450px;
+            background-color: rgb(0, 174, 255);
+            border-radius: 10px;
+            margin: auto;
+        }
+        button{
+            width: 130px;
+            height: 50px;
+            font-size: 18px;
+            background-color: rgb(32, 158, 28);
+            float:right;
+            margin-top: 380px;
+            margin-right: 30px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border: none;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <button type="submit" onmouseout="changeGreen()" onmouseover="changeRed()" id="changeColor">SUBMIT</button>
+    </div>
+    <script>
+        function changeGreen(){
+          var btn = document.getElementById("changeColor");
+          btn.style.background = "rgb(32, 158, 28)";
+        }
+
+        function changeRed(){
+            var btn = document.getElementById("changeColor");
+            btn.style.background = "red";
+        }
+
+    </script>
+</body>
+</html>

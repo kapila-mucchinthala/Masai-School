@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom-Array-II</title>
+</head>
+
+
+<body>
+    <h1>Custom Array III</h1>
+</body>
+
+</html>
+
+
+<script>
+
+
+    function reverseArr(input) {
+        var array = new Array;
+        for (var i = input.length - 1; i >= 0; i--) {
+            array.push(input[i]);
+        }
+        return array;
+    }
+    reverseArr.prototype.push = function (x) {
+        let j = this.length;
+        this[j] = x;
+        this.length++;
+    };
+
+    var a = []
+    a.push(11);
+    a.push(12);
+    a.push(13);
+    a.push(14);
+    a.push(15);
+    console.log("Original Array", a);
+    var b = reverseArr(a);
+
+    console.log('Reversed Array: ', b);
+    console.log("First Element from Reversed Array: ", b[0]);
+
+</script>

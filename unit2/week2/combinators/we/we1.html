@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        #form{
+            margin-left: 300px;
+            margin-top: 200px;   
+              
+        }
+       body div{
+            float: left; 
+       }
+        body{
+            font-family: sans-serif;
+        }
+     label{
+         font-size: 28px;
+     }
+     input{
+         width: 230px;
+         height: 30px;
+         border: 2px solid black;
+          margin-top: 0.5%;
+     }
+     #reg-form p{
+         color: red;
+         font-size: 25px;
+         margin-top: 0.5%;
+     }
+     input[type="button"]{
+         width: 240px;
+         height: 40px;
+        background-color: black;
+        color:white;
+        font-size: 28px;
+     }
+     #reg-info{
+          width: 290px;
+         background-color: black;
+         color:white;
+         padding: 10px;
+        margin-left: 200px;
+       font-size: 28px;
+       padding-left: 20px;
+      
+     }
+     .size{
+         font-size: 45px;
+     }
+     .size2{
+         font-size: 25px;
+     }
+     /* #reg-info >p> h:nth-child(1){
+        font-size: 40px;
+     } */
+      /* #reg-info > p:nth-child(2n){
+        margin-top: 0px;
+     } */
+     
+    </style>
+</head>
+<body>
+    <div id="form">
+    <div id="reg-form">
+        <form>
+        <label>NAME</label><br>
+        <input type="text"/><br><br>
+        <label>EMAIL</label><br>
+        <input type="text"/><br><br>
+        <label>MOBILE</label><br>
+        <input type="text"/>
+        <p>Enter a valid mobile</p>
+        <input type="button" value="REGISTER"/>
+        </form>
+    </div>
+    <div id="reg-info">
+        <p>NAME<br>
+        <h class="size">MASAI</h></p>
+        <p>EMAIL<br>
+        <h class="size2">email@masaischool.com</h></p>
+        <p>MOBILE<br>
+        <h>9876543210</h></p>
+    </div>
+</div>
+</body>
+</html>

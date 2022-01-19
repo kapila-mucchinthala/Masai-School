@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 100px;
+            height: 100px;
+            font-size: 40px;
+            background-color: rgb(11, 245, 62);
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="rollDice()" id="btn">0</button>
+    <script>
+        function rollDice(){
+            var btn = document.getElementById("btn");
+            var roll = Math.floor(Math.random()*6)+1;
+            btn.textContent = roll;
+            if(roll==6){
+                btn.style.color = "green";
+            }
+            else if (roll == 1) {
+                btn.style.color = "red";
+            }
+            else{
+                btn.style.color = "white";
+            }
+        }
+    </script>
+</body>
+</html>

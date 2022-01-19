@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Layout</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: teal;
+            margin: 10px;
+            float: left;
+            border-radius: 5px;
+
+        }
+
+        #demo {
+            width: 250px;
+        }
+
+        #demo1 {
+            clear: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="box"></div>
+        <div id="demo" class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div id="demo1">
+        <div id="demo" class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div id="demo1">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div id="demo" class="box"></div>
+    </div>
+
+</html>

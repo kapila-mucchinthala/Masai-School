@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<select id="continentSelect">
+    <option value="India">India</option>
+    <option value="United States of America">United States of America</option>
+    <option value="China">China</option>
+    <option value="Nepal">Nepal</option>
+    <option value="Australia">Australia</option>
+    <option value="France">France</option>
+    <option value="Germany">Germany</option>
+    <option value="South Africa">South Africa</option>
+    <option value="Nigeria">Nigeria</option>
+    <option value="Argentina">Argentina</option>
+    <option value="Canada">Canada</option>
+    <option value="Singapore">Singapore</option>
+    <option value="Sweden">Sweden</option>
+</select>
+
+<button id="findContinent" onclick="finder()">Find Continent</button>
+
+<p id="result"></p>
+
+    <script>
+        function finder() {
+                var cont = document.getElementById("continentSelect").value;
+
+                var res = "";
+
+                switch (cont) {
+                    case "India":
+                    case "China":
+                    case "Nepal":
+                    case "Singapore": {
+                        res = "Asia";
+                        break;
+                    }
+                    case "Australia": {
+                        res = "Australia";
+                        break;
+                    }
+                    case "South Africa":
+                    case "Nigeria": {
+                        res = "Africa";
+                        break;
+                    }
+                    case "France":
+                    case "Germany":
+                    case "Sweden": {
+                        res = "Europe";
+                        break;
+                    }
+                    case "Argentina": {
+                        res = "South america";
+                        break;
+                    }
+                    case "Canada": {
+                        res = "North america";
+                        break;
+                    }
+                }
+
+                document.getElementById("result").innerHTML = res;
+
+            }
+    </script>
+</body>
+</html>
