@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: rgb(226, 219, 219);
+    }
+    #container {
+      width: 80%;
+      height: 700px;
+      margin: auto;
+    }
+
+    .details {
+      font-size: 20px;
+      line-height: 1.8;
+      width: 100%;
+      text-align: left;
+      margin-left: 55%;
+      color: rgb(17, 17, 17);
+    }
+    .search {
+      text-align: center;
+      margin-top: 4%;
+    }
+    #movie {
+      width: 25%;
+      height: 35px;
+      margin-top: 15px;
+      background-color: #fff;
+      border-radius: 5px;
+      color: black;
+      font-size: 17px;
+      border: none;
+    }
+    .btn {
+      height: 35px;
+      padding: 0px 15px;
+      padding-bottom: 2px;
+      background-color: rgb(255, 72, 0);
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 30px;
+      border: none;
+      color:white;
+    }
+    h1 {
+      color: rgb(255, 81, 0);
+    }
+    #movies {
+      display: grid;
+      grid-template-columns: repeat(3, 25%);
+      grid-gap: 3%;
+      height: 800px;
+      width: 100%;
+      margin-top: 5%;
+    }
+    img {
+      width: 250px;
+      height: 350px;
+      float: left;
+      border-radius: 5px;
+      border: 1px solid #fff;
+    }
+    .main {
+      height: 330px;
+      width: 160%;
+    }
+    .recommend {
+      color: #fff;
+      margin-top: 10%;
+      background-color: rgb(143, 0, 0);
+      float: left;
+      font-weight: bold;
+      padding: 0px 10px;
+      border-radius: 30px;
+    }
+    </style>
+</head>
+
+<body>
+
+  <div id="container"> 
+      <div class="search">
+          <h1>Online Movie Search Engine</h1>
+          <input type="text" id="movie" placeholder="Enter Movie" />
+          <button class="btn" onclick="getMovie()">Search</button>
+      </div>
+
+       <div id="movies"></div>
+  </div>
+</body>
+
+</html>
+<script>
+   
+
+    var movies_div = document.getElementById("movies");
+    async function getMovie() {
+        movies_div.innerHTML = null;
+        let movie = document.getElementById("movie").value;
+        try {
+
+            let response = await fetch(`http://www.omdbapi.com/?apikey=b376ea26&t=${movie}`);
+            let data = await response.json();
+            // console.log(data);
+            if(data.Response=="False"){
+                alert("Movie Not Found");
+            }
+            else{
+                console.log(data);
+                var main_div = document.createElement("div");
+                main_div.setAttribute("class", "main");
+
+                var movieimg = document.createElement("div");
+                var details = document.createElement("div");
+                details.setAttribute("class", "details");
+
+                var details = document.createElement("div");
+                details.setAttribute("class", "details");
+
+                var title = document.createElement("div");
+                title.innerHTML = `Movie:${data.Title}`;
+
+                var released = document.createElement("div");
+                released.innerHTML = `Released:${data.Released}`;
+
+                var runtime = document.createElement("div");
+                runtime.innerHTML = `Runtime:${data.Runtime}`;
+
+                var description = document.createElement("div");
+                description.innerHTML = `Description:${data.Plot}`;
+
+                var img = document.createElement("img");
+                img.src = data.Poster;
+
+                var imdb = document.createElement("div");
+                imdb.innerHTML = `IMDb:${data.imdbRating}`;
+
+                var recommend = document.createElement("div");
+                recommend.setAttribute("class", "recommend");
+                recommend.innerHTML = "Recommended ";
+
+                if (data.imdbRating > 8.5) {
+                    details.append(title, released, imdb, runtime, description, recommend);
+                } else {
+                    details.append(title, released, imdb, runtime, description);
+                }
+
+                movieimg.append(img);
+
+                main_div.append(movieimg, details);
+
+                movies_div.append(main_div);
+
+
+            }
+
+        }
+
+        catch (err) {
+            console.log(err);
+
+        }
+
+
+    }
+
+
+</script>
+

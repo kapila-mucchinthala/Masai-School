@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<link rel="stylesheet" href="foodApp.css"/>
+
+<body>
+    <div id="navbar">
+       
+           <h3><a href="searchRecipeByName.html">Search Recipe By Name</a></h3> 
+            <h3><a href="recipeOfTheDay.html">Recipe Of The Day</a></h3>
+            <h3><a href="latestRecipeOfTheDay.html">Latest Recipes</a></h3>
+            
+    </div>
+
+
+    <div class="find">
+      <h1>Search Your Recipe</h1>
+      <input type="text" name="" id="search" />
+      <button onclick="showRecipe()">Search</button>
+    </div>
+
+    <div id="data"></div>
+    
+</body>
+</html>
+<!-- <script type="module">
+
+    import navbar from "./navbar.js";
+
+    document.body.innerHTML = navbar();
+
+</script> -->
+<script>
+async function showRecipe(){
+    let item = document.getElementById("search").value;
+    if(item == ""){
+        alert("Please enter recipe");
+    }
+    else{
+        let res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${item}`);
+        //console.log(res)
+        let data = await res.json();
+       console.log(data)
+   }
+}
+// showRecipe()
+
+</script>

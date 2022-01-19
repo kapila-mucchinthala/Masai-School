@@ -1,0 +1,106 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+
+            body{
+                background-color: #252424;
+            }
+
+        #title {
+        width: 10%;
+        height: 60px;
+        float: left;
+        margin-left: 20px;
+        }
+
+        #navbar{
+            width: 100%;
+            height: 60px;
+            background-color:#252424 ;
+        }
+        hr{
+            background-color: white;
+        }
+        #video{
+            width: 40%;
+            height: 24px;
+            margin-top: 14px;
+            margin-left: 200px;
+            
+        }
+        button{
+            height: 30px;
+        }
+        #videos_div {
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        grid-gap: 10px;
+        align-items: center;
+      }
+      #videos_div > div {
+        width: 90%;
+        margin: 3%;
+      }
+
+        </style>
+    </head>
+    <body>
+
+        
+      <div id="navbar">
+      <img
+        id="title"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv9HBY19Fr_s0A1S8aYcTyskNldUSSfiracw&usqp=CAU"
+        alt=""
+      />
+        <input type="text" id="video" placeholder="Search for videos..."/>
+
+        <button onclick="searchVideos()">Search</button>
+      </div>
+      <hr/>
+        
+        <div id="videos_div"></div>
+    </body>
+    </html>
+
+    <script>
+
+        let div = document.getElementById("videos_div");
+
+        async function searchVideos(){
+
+            let video = document.getElementById("video").value;
+            video.innerHTML = null;
+
+            let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${video}&type=video&key=AIzaSyCpV1S9yXGqVOShlldVB_TTJ99ZuVKL4y8&maxResults=20`);
+
+            let data = await res.json();
+            //console.log("data:",data);
+
+            for({id:{videoId}} of data.items){
+                // console.log("videoId:", videoId);
+
+                let video_frame = document.createElement("iframe");
+
+                video_frame.src = `https://www.youtube.com/embed/${videoId}`;
+
+                video_frame.allow = `fullscreen`;
+
+                div.appendChild(video_frame);
+                
+            }
+
+        }
+
+
+    </script>
+
+
+<!-- https://youtube.googleapis.com/youtube/v3/search?part=tesla&key=[YOUR_API_KEY] -->
+<!-- youtube api key -->
+<!-- AIzaSyCpV1S9yXGqVOShlldVB_TTJ99ZuVKL4y8 -->
+<!-- https://youtube.googleapis.com/youtube/v3/search?part=snippet&chart=mostPopular&regionCode=us&key=AIzaSyDbpvV9-tOxuDR0gmhX3idH_n36waK-sEc&maxResults=50 -->

@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "name": "pras",
+      "price": 10,
+      "active": false,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Dhoni",
+      "active": false
+    },
+    {
+      "id": 3,
+      "name": "Bob Taylor",
+      "age": 45,
+      "active": false
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Pizza",
+      "price": 10,
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Hamburger",
+      "price": 7,
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Ice Cream",
+      "price": 2.5,
+      "active": false
+    },
+    {
+      "id": 4,
+      "name": "Chocolate",
+      "price": 6,
+      "active": true
+    },
+    {
+      "name": "Cadbury",
+      "price": 10,
+      "active": true,
+      "id": 10
+    },
+    {
+      "id": 17,
+      "name": "Pickey Blinder",
+      "price": 100,
+      "active": false
+    }
+  ]
+}

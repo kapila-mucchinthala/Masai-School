@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Road to Backend</h1>
+</body>
+</html>
+ <script> 
+
+//     async function getUsers(){
+
+//         let res = await fetch(`http://localhost:3000/api/users`);
+//         let data = await res.json();
+//         console.log(data)
+//     }
+// getUsers();
+
+//     async function addUser(){
+
+//         let res = await fetch(`http://localhost:3000/api/products`,{
+//         method:"POST",
+//         body: JSON.stringify({ 
+//         id:17,
+//         name:"Pickey Blinder",
+//         price:100,
+//         active:false,
+//         }),
+//         headers: {"Content-Type": "application/json"},
+//         });     
+
+
+//         let data = await res.json();
+//         console.log(data)
+//     }
+// addUser();
+
+// 
+
+async function addUser() {
+    let res = await fetch("http://localhost:3000/api/users/1", {
+      method: "PUT",
+      body: JSON.stringify({
+       
+        name: "kapila kishore",
+        age: 40,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+    let data = await res.json();
+    console.log(data);
+  }
+    addUser();
+
+ </script>

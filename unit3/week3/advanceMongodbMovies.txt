@@ -1,0 +1,1514 @@
+Kishores-MacBook-Air:~ kishore$ mongo
+MongoDB shell version v5.0.3
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("89582340-f819-4a1b-8ce9-a9753a16a72f") }
+MongoDB server version: 5.0.3
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+We recommend you begin using "mongosh".
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting: 
+        2021-09-26T22:48:29.980+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+        2021-09-26T22:48:29.980+05:30: This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning
+        2021-09-26T22:48:29.980+05:30: Soft rlimits for open file descriptors too low
+        2021-09-26T22:48:29.980+05:30:         currentValue: 256
+        2021-09-26T22:48:29.980+05:30:         recommendedMinimum: 64000
+---
+---
+       Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin     0.000GB
+config    0.000GB
+kapila    0.000GB
+local     0.000GB
+movies    0.000GB
+naukri    0.000GB
+products  0.000GB
+web11     0.000GB
+> use movies
+switched to db movies
+> show collections
+users
+> db.users.count()
+500
+> db.users.find().pretty()
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f93"),
+	"movie_name" : "House of Sand (Casa de Areia)",
+	"movie_genre" : "Drama",
+	"production_year" : 1993,
+	"budget" : 19064
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f94"),
+	"movie_name" : "Gentlemen Prefer Blondes",
+	"movie_genre" : "Comedy|Musical|Romance",
+	"production_year" : 2006,
+	"budget" : 9774
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f95"),
+	"movie_name" : "Better Than Sex",
+	"movie_genre" : "Comedy|Romance",
+	"production_year" : 2020,
+	"budget" : 14115
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f96"),
+	"movie_name" : "Pollyanna",
+	"movie_genre" : "Children|Comedy|Drama",
+	"production_year" : 2005,
+	"budget" : 9294
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f97"),
+	"movie_name" : "Organization, The",
+	"movie_genre" : "Crime|Drama|Thriller",
+	"production_year" : 2002,
+	"budget" : 9323
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f98"),
+	"movie_name" : "Not as a Stranger",
+	"movie_genre" : "Drama",
+	"production_year" : 1996,
+	"budget" : 11903
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f99"),
+	"movie_name" : "Sommer der Gaukler, Der",
+	"movie_genre" : "Comedy",
+	"production_year" : 2006,
+	"budget" : 11065
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9a"),
+	"movie_name" : "Read It and Weep",
+	"movie_genre" : "Comedy",
+	"production_year" : 2019,
+	"budget" : 11151
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9b"),
+	"movie_name" : "Body Bags",
+	"movie_genre" : "Comedy|Horror|Sci-Fi|Thriller",
+	"production_year" : 2001,
+	"budget" : 16485
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9c"),
+	"movie_name" : "Prefab People, The (Panelkapcsolat)",
+	"movie_genre" : "Drama",
+	"production_year" : 1994,
+	"budget" : 10998
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9d"),
+	"movie_name" : "Parenthood",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 2011,
+	"budget" : 11112
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9e"),
+	"movie_name" : "Otaku",
+	"movie_genre" : "Documentary",
+	"production_year" : 2011,
+	"budget" : 12049
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9f"),
+	"movie_name" : "Julia",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 2011,
+	"budget" : 13927
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa0"),
+	"movie_name" : "Johnny Apollo",
+	"movie_genre" : "Crime|Drama|Film-Noir|Romance",
+	"production_year" : 1997,
+	"budget" : 17661
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa1"),
+	"movie_name" : "Boy",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 2002,
+	"budget" : 15875
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa2"),
+	"movie_name" : "Starlift",
+	"movie_genre" : "(no genres listed)",
+	"production_year" : 1990,
+	"budget" : 16463
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa3"),
+	"movie_name" : "Love Me Tonight",
+	"movie_genre" : "Comedy|Musical",
+	"production_year" : 1994,
+	"budget" : 11732
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa4"),
+	"movie_name" : "God's Comedy (A Comédia de Deus)",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 1995,
+	"budget" : 15566
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa5"),
+	"movie_name" : "Third World Cop",
+	"movie_genre" : "Action",
+	"production_year" : 2001,
+	"budget" : 18799
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa6"),
+	"movie_name" : "Clean and Sober",
+	"movie_genre" : "Drama",
+	"production_year" : 2002,
+	"budget" : 16796
+}
+Type "it" for more
+> db.users.find({movie_name: {$eq: "Third World Cop"}}).pretty()
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa5"),
+	"movie_name" : "Third World Cop",
+	"movie_genre" : "Action",
+	"production_year" : 2001,
+	"budget" : 18799
+}
+> db.users.find({movie_name: {$ne: "Clean and Sober"}}).pretty()
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f93"),
+	"movie_name" : "House of Sand (Casa de Areia)",
+	"movie_genre" : "Drama",
+	"production_year" : 1993,
+	"budget" : 19064
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f94"),
+	"movie_name" : "Gentlemen Prefer Blondes",
+	"movie_genre" : "Comedy|Musical|Romance",
+	"production_year" : 2006,
+	"budget" : 9774
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f95"),
+	"movie_name" : "Better Than Sex",
+	"movie_genre" : "Comedy|Romance",
+	"production_year" : 2020,
+	"budget" : 14115
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f96"),
+	"movie_name" : "Pollyanna",
+	"movie_genre" : "Children|Comedy|Drama",
+	"production_year" : 2005,
+	"budget" : 9294
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f97"),
+	"movie_name" : "Organization, The",
+	"movie_genre" : "Crime|Drama|Thriller",
+	"production_year" : 2002,
+	"budget" : 9323
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f98"),
+	"movie_name" : "Not as a Stranger",
+	"movie_genre" : "Drama",
+	"production_year" : 1996,
+	"budget" : 11903
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f99"),
+	"movie_name" : "Sommer der Gaukler, Der",
+	"movie_genre" : "Comedy",
+	"production_year" : 2006,
+	"budget" : 11065
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9a"),
+	"movie_name" : "Read It and Weep",
+	"movie_genre" : "Comedy",
+	"production_year" : 2019,
+	"budget" : 11151
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9b"),
+	"movie_name" : "Body Bags",
+	"movie_genre" : "Comedy|Horror|Sci-Fi|Thriller",
+	"production_year" : 2001,
+	"budget" : 16485
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9c"),
+	"movie_name" : "Prefab People, The (Panelkapcsolat)",
+	"movie_genre" : "Drama",
+	"production_year" : 1994,
+	"budget" : 10998
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9d"),
+	"movie_name" : "Parenthood",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 2011,
+	"budget" : 11112
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9e"),
+	"movie_name" : "Otaku",
+	"movie_genre" : "Documentary",
+	"production_year" : 2011,
+	"budget" : 12049
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9f"),
+	"movie_name" : "Julia",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 2011,
+	"budget" : 13927
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa0"),
+	"movie_name" : "Johnny Apollo",
+	"movie_genre" : "Crime|Drama|Film-Noir|Romance",
+	"production_year" : 1997,
+	"budget" : 17661
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa1"),
+	"movie_name" : "Boy",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 2002,
+	"budget" : 15875
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa2"),
+	"movie_name" : "Starlift",
+	"movie_genre" : "(no genres listed)",
+	"production_year" : 1990,
+	"budget" : 16463
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa3"),
+	"movie_name" : "Love Me Tonight",
+	"movie_genre" : "Comedy|Musical",
+	"production_year" : 1994,
+	"budget" : 11732
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa4"),
+	"movie_name" : "God's Comedy (A Comédia de Deus)",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 1995,
+	"budget" : 15566
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa5"),
+	"movie_name" : "Third World Cop",
+	"movie_genre" : "Action",
+	"production_year" : 2001,
+	"budget" : 18799
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa7"),
+	"movie_name" : "Interview, The",
+	"movie_genre" : "Crime|Drama|Mystery|Thriller",
+	"production_year" : 1994,
+	"budget" : 18411
+}
+Type "it" for more
+> db.users.find({budget: {$gt: 18411}}).pretty()
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f93"),
+	"movie_name" : "House of Sand (Casa de Areia)",
+	"movie_genre" : "Drama",
+	"production_year" : 1993,
+	"budget" : 19064
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa5"),
+	"movie_name" : "Third World Cop",
+	"movie_genre" : "Action",
+	"production_year" : 2001,
+	"budget" : 18799
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fac"),
+	"movie_name" : "Fifth Cord, The (Giornata nera per l'ariete)",
+	"movie_genre" : "Mystery|Thriller",
+	"production_year" : 2001,
+	"budget" : 18519
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fb7"),
+	"movie_name" : "Puppet Master 5: The Final Chapter",
+	"movie_genre" : "Horror|Sci-Fi|Thriller",
+	"production_year" : 1990,
+	"budget" : 19375
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fba"),
+	"movie_name" : "This Gun for Hire",
+	"movie_genre" : "Crime|Film-Noir|Thriller",
+	"production_year" : 2019,
+	"budget" : 19533
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fd1"),
+	"movie_name" : "Meet Me at the Fair",
+	"movie_genre" : "Musical",
+	"production_year" : 2004,
+	"budget" : 18668
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fd6"),
+	"movie_name" : "Killjoy 2: Deliverance from Evil",
+	"movie_genre" : "Horror",
+	"production_year" : 2019,
+	"budget" : 19395
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fd8"),
+	"movie_name" : "Lion King II: Simba's Pride, The",
+	"movie_genre" : "Adventure|Animation|Children|Musical|Romance",
+	"production_year" : 2017,
+	"budget" : 19028
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fe1"),
+	"movie_name" : "Apache Country",
+	"movie_genre" : "Action|Western",
+	"production_year" : 1999,
+	"budget" : 19548
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3ff6"),
+	"movie_name" : "King of Comedy, The",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 1991,
+	"budget" : 19485
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3ff7"),
+	"movie_name" : "Cameraman, The",
+	"movie_genre" : "Comedy|Drama|Romance",
+	"production_year" : 2013,
+	"budget" : 19893
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3ff8"),
+	"movie_name" : "Appaloosa, The",
+	"movie_genre" : "Western",
+	"production_year" : 1992,
+	"budget" : 19288
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3ffd"),
+	"movie_name" : "Collision: Christopher Hitchens vs. Douglas Wilson",
+	"movie_genre" : "Documentary",
+	"production_year" : 2007,
+	"budget" : 18484
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b400a"),
+	"movie_name" : "Bonnie and Clyde",
+	"movie_genre" : "Crime|Documentary|Drama",
+	"production_year" : 1997,
+	"budget" : 19752
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b400e"),
+	"movie_name" : "Great Stone Face, The",
+	"movie_genre" : "Documentary",
+	"production_year" : 2003,
+	"budget" : 18473
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4012"),
+	"movie_name" : "At Long Last Love",
+	"movie_genre" : "Comedy|Musical|Romance",
+	"production_year" : 2014,
+	"budget" : 19012
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b401d"),
+	"movie_name" : "Epitaph",
+	"movie_genre" : "Horror",
+	"production_year" : 1999,
+	"budget" : 18465
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b401e"),
+	"movie_name" : "Flow: For Love of Water",
+	"movie_genre" : "Documentary",
+	"production_year" : 1999,
+	"budget" : 18719
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b404b"),
+	"movie_name" : "Sexy Nights of the Living Dead",
+	"movie_genre" : "Horror",
+	"production_year" : 2006,
+	"budget" : 19281
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b404d"),
+	"movie_name" : "Warning for the Joensson Gang (Varning för Jönssonligan)",
+	"movie_genre" : "Comedy|Crime",
+	"production_year" : 2014,
+	"budget" : 18945
+}
+Type "it" for more
+> db.users.find({budget: {$gte: 18945}}).pretty()
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f93"),
+	"movie_name" : "House of Sand (Casa de Areia)",
+	"movie_genre" : "Drama",
+	"production_year" : 1993,
+	"budget" : 19064
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fb7"),
+	"movie_name" : "Puppet Master 5: The Final Chapter",
+	"movie_genre" : "Horror|Sci-Fi|Thriller",
+	"production_year" : 1990,
+	"budget" : 19375
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fba"),
+	"movie_name" : "This Gun for Hire",
+	"movie_genre" : "Crime|Film-Noir|Thriller",
+	"production_year" : 2019,
+	"budget" : 19533
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fd6"),
+	"movie_name" : "Killjoy 2: Deliverance from Evil",
+	"movie_genre" : "Horror",
+	"production_year" : 2019,
+	"budget" : 19395
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fd8"),
+	"movie_name" : "Lion King II: Simba's Pride, The",
+	"movie_genre" : "Adventure|Animation|Children|Musical|Romance",
+	"production_year" : 2017,
+	"budget" : 19028
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fe1"),
+	"movie_name" : "Apache Country",
+	"movie_genre" : "Action|Western",
+	"production_year" : 1999,
+	"budget" : 19548
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3ff6"),
+	"movie_name" : "King of Comedy, The",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 1991,
+	"budget" : 19485
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3ff7"),
+	"movie_name" : "Cameraman, The",
+	"movie_genre" : "Comedy|Drama|Romance",
+	"production_year" : 2013,
+	"budget" : 19893
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3ff8"),
+	"movie_name" : "Appaloosa, The",
+	"movie_genre" : "Western",
+	"production_year" : 1992,
+	"budget" : 19288
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b400a"),
+	"movie_name" : "Bonnie and Clyde",
+	"movie_genre" : "Crime|Documentary|Drama",
+	"production_year" : 1997,
+	"budget" : 19752
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4012"),
+	"movie_name" : "At Long Last Love",
+	"movie_genre" : "Comedy|Musical|Romance",
+	"production_year" : 2014,
+	"budget" : 19012
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b404b"),
+	"movie_name" : "Sexy Nights of the Living Dead",
+	"movie_genre" : "Horror",
+	"production_year" : 2006,
+	"budget" : 19281
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b404d"),
+	"movie_name" : "Warning for the Joensson Gang (Varning för Jönssonligan)",
+	"movie_genre" : "Comedy|Crime",
+	"production_year" : 2014,
+	"budget" : 18945
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b404e"),
+	"movie_name" : "Funeral Parade of Roses (Bara no sôretsu)",
+	"movie_genre" : "Drama",
+	"production_year" : 1998,
+	"budget" : 19722
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4056"),
+	"movie_name" : "Heartbreak Kid, The",
+	"movie_genre" : "Comedy|Romance",
+	"production_year" : 2019,
+	"budget" : 18994
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4060"),
+	"movie_name" : "Mitchell",
+	"movie_genre" : "Action|Crime",
+	"production_year" : 2010,
+	"budget" : 19668
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4061"),
+	"movie_name" : "The Captains",
+	"movie_genre" : "Documentary|Sci-Fi",
+	"production_year" : 2000,
+	"budget" : 19250
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b407a"),
+	"movie_name" : "Laggies",
+	"movie_genre" : "Comedy|Romance",
+	"production_year" : 1998,
+	"budget" : 19706
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b407c"),
+	"movie_name" : "Madison Avenue",
+	"movie_genre" : "Drama",
+	"production_year" : 2010,
+	"budget" : 19890
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4082"),
+	"movie_name" : "301, 302 (301/302)",
+	"movie_genre" : "Horror|Mystery|Thriller",
+	"production_year" : 1997,
+	"budget" : 19596
+}
+Type "it" for more
+> db.users.find({budget: {$lt: 18000}}).pretty()
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f94"),
+	"movie_name" : "Gentlemen Prefer Blondes",
+	"movie_genre" : "Comedy|Musical|Romance",
+	"production_year" : 2006,
+	"budget" : 9774
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f95"),
+	"movie_name" : "Better Than Sex",
+	"movie_genre" : "Comedy|Romance",
+	"production_year" : 2020,
+	"budget" : 14115
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f96"),
+	"movie_name" : "Pollyanna",
+	"movie_genre" : "Children|Comedy|Drama",
+	"production_year" : 2005,
+	"budget" : 9294
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f97"),
+	"movie_name" : "Organization, The",
+	"movie_genre" : "Crime|Drama|Thriller",
+	"production_year" : 2002,
+	"budget" : 9323
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f98"),
+	"movie_name" : "Not as a Stranger",
+	"movie_genre" : "Drama",
+	"production_year" : 1996,
+	"budget" : 11903
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f99"),
+	"movie_name" : "Sommer der Gaukler, Der",
+	"movie_genre" : "Comedy",
+	"production_year" : 2006,
+	"budget" : 11065
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9a"),
+	"movie_name" : "Read It and Weep",
+	"movie_genre" : "Comedy",
+	"production_year" : 2019,
+	"budget" : 11151
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9b"),
+	"movie_name" : "Body Bags",
+	"movie_genre" : "Comedy|Horror|Sci-Fi|Thriller",
+	"production_year" : 2001,
+	"budget" : 16485
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9c"),
+	"movie_name" : "Prefab People, The (Panelkapcsolat)",
+	"movie_genre" : "Drama",
+	"production_year" : 1994,
+	"budget" : 10998
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9d"),
+	"movie_name" : "Parenthood",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 2011,
+	"budget" : 11112
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9e"),
+	"movie_name" : "Otaku",
+	"movie_genre" : "Documentary",
+	"production_year" : 2011,
+	"budget" : 12049
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9f"),
+	"movie_name" : "Julia",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 2011,
+	"budget" : 13927
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa0"),
+	"movie_name" : "Johnny Apollo",
+	"movie_genre" : "Crime|Drama|Film-Noir|Romance",
+	"production_year" : 1997,
+	"budget" : 17661
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa1"),
+	"movie_name" : "Boy",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 2002,
+	"budget" : 15875
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa2"),
+	"movie_name" : "Starlift",
+	"movie_genre" : "(no genres listed)",
+	"production_year" : 1990,
+	"budget" : 16463
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa3"),
+	"movie_name" : "Love Me Tonight",
+	"movie_genre" : "Comedy|Musical",
+	"production_year" : 1994,
+	"budget" : 11732
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa4"),
+	"movie_name" : "God's Comedy (A Comédia de Deus)",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 1995,
+	"budget" : 15566
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa6"),
+	"movie_name" : "Clean and Sober",
+	"movie_genre" : "Drama",
+	"production_year" : 2002,
+	"budget" : 16796
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa8"),
+	"movie_name" : "The Batman vs. Dracula",
+	"movie_genre" : "Action|Animation|Horror|Thriller",
+	"production_year" : 2010,
+	"budget" : 10634
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa9"),
+	"movie_name" : "Lights Out",
+	"movie_genre" : "Drama|Mystery|Thriller",
+	"production_year" : 2010,
+	"budget" : 17544
+}
+Type "it" for more
+> db.users.find({$and: [{year:{$gt:2000}},{budget:{$gt:10000}}]}).pretty()
+> db.users.find({$or: [{year:{$gt:2000}},{budget:{$gt:10000}}]}).pretty()
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f93"),
+	"movie_name" : "House of Sand (Casa de Areia)",
+	"movie_genre" : "Drama",
+	"production_year" : 1993,
+	"budget" : 19064
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f95"),
+	"movie_name" : "Better Than Sex",
+	"movie_genre" : "Comedy|Romance",
+	"production_year" : 2020,
+	"budget" : 14115
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f98"),
+	"movie_name" : "Not as a Stranger",
+	"movie_genre" : "Drama",
+	"production_year" : 1996,
+	"budget" : 11903
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f99"),
+	"movie_name" : "Sommer der Gaukler, Der",
+	"movie_genre" : "Comedy",
+	"production_year" : 2006,
+	"budget" : 11065
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9a"),
+	"movie_name" : "Read It and Weep",
+	"movie_genre" : "Comedy",
+	"production_year" : 2019,
+	"budget" : 11151
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9b"),
+	"movie_name" : "Body Bags",
+	"movie_genre" : "Comedy|Horror|Sci-Fi|Thriller",
+	"production_year" : 2001,
+	"budget" : 16485
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9c"),
+	"movie_name" : "Prefab People, The (Panelkapcsolat)",
+	"movie_genre" : "Drama",
+	"production_year" : 1994,
+	"budget" : 10998
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9d"),
+	"movie_name" : "Parenthood",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 2011,
+	"budget" : 11112
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9e"),
+	"movie_name" : "Otaku",
+	"movie_genre" : "Documentary",
+	"production_year" : 2011,
+	"budget" : 12049
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9f"),
+	"movie_name" : "Julia",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 2011,
+	"budget" : 13927
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa0"),
+	"movie_name" : "Johnny Apollo",
+	"movie_genre" : "Crime|Drama|Film-Noir|Romance",
+	"production_year" : 1997,
+	"budget" : 17661
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa1"),
+	"movie_name" : "Boy",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 2002,
+	"budget" : 15875
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa2"),
+	"movie_name" : "Starlift",
+	"movie_genre" : "(no genres listed)",
+	"production_year" : 1990,
+	"budget" : 16463
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa3"),
+	"movie_name" : "Love Me Tonight",
+	"movie_genre" : "Comedy|Musical",
+	"production_year" : 1994,
+	"budget" : 11732
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa4"),
+	"movie_name" : "God's Comedy (A Comédia de Deus)",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 1995,
+	"budget" : 15566
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa5"),
+	"movie_name" : "Third World Cop",
+	"movie_genre" : "Action",
+	"production_year" : 2001,
+	"budget" : 18799
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa6"),
+	"movie_name" : "Clean and Sober",
+	"movie_genre" : "Drama",
+	"production_year" : 2002,
+	"budget" : 16796
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa7"),
+	"movie_name" : "Interview, The",
+	"movie_genre" : "Crime|Drama|Mystery|Thriller",
+	"production_year" : 1994,
+	"budget" : 18411
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa8"),
+	"movie_name" : "The Batman vs. Dracula",
+	"movie_genre" : "Action|Animation|Horror|Thriller",
+	"production_year" : 2010,
+	"budget" : 10634
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa9"),
+	"movie_name" : "Lights Out",
+	"movie_genre" : "Drama|Mystery|Thriller",
+	"production_year" : 2010,
+	"budget" : 17544
+}
+Type "it" for more
+> db.users.find({$nor: [{year:{$gt:2000}},{budget:{$gt:10000}}]}).pretty()
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f94"),
+	"movie_name" : "Gentlemen Prefer Blondes",
+	"movie_genre" : "Comedy|Musical|Romance",
+	"production_year" : 2006,
+	"budget" : 9774
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f96"),
+	"movie_name" : "Pollyanna",
+	"movie_genre" : "Children|Comedy|Drama",
+	"production_year" : 2005,
+	"budget" : 9294
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f97"),
+	"movie_name" : "Organization, The",
+	"movie_genre" : "Crime|Drama|Thriller",
+	"production_year" : 2002,
+	"budget" : 9323
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fb1"),
+	"movie_name" : "Goodfellas",
+	"movie_genre" : "Crime|Drama",
+	"production_year" : 1991,
+	"budget" : 9828
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fc8"),
+	"movie_name" : "Last Detail, The",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 2020,
+	"budget" : 9578
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fe5"),
+	"movie_name" : "Circle of Deceit (Die Fälschung)",
+	"movie_genre" : "Drama|War",
+	"production_year" : 2015,
+	"budget" : 9868
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fec"),
+	"movie_name" : "Howling IV: The Original Nightmare",
+	"movie_genre" : "Horror",
+	"production_year" : 2011,
+	"budget" : 9921
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4000"),
+	"movie_name" : "Katsastus",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 2014,
+	"budget" : 9110
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4007"),
+	"movie_name" : "Gray Lady Down",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 2019,
+	"budget" : 9542
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4019"),
+	"movie_name" : "Mighty Wind, A",
+	"movie_genre" : "Comedy|Musical",
+	"production_year" : 2010,
+	"budget" : 9660
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4022"),
+	"movie_name" : "Old School",
+	"movie_genre" : "Comedy",
+	"production_year" : 2018,
+	"budget" : 9660
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4048"),
+	"movie_name" : "Night of the Iguana, The",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 2020,
+	"budget" : 9020
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4052"),
+	"movie_name" : "Bingo",
+	"movie_genre" : "Adventure|Comedy",
+	"production_year" : 2006,
+	"budget" : 9251
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b405a"),
+	"movie_name" : "Wooden Bridge, The",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 1997,
+	"budget" : 9104
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b405b"),
+	"movie_name" : "The Little Kidnappers",
+	"movie_genre" : "Drama|Romance|War",
+	"production_year" : 2011,
+	"budget" : 9587
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4067"),
+	"movie_name" : "Strip Nude for Your Killer (Nude per l'assassino)",
+	"movie_genre" : "Horror|Mystery|Thriller",
+	"production_year" : 1997,
+	"budget" : 9711
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4071"),
+	"movie_name" : "Man on a Ledge",
+	"movie_genre" : "Crime|Thriller",
+	"production_year" : 2012,
+	"budget" : 9907
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4081"),
+	"movie_name" : "Dr. Horrible's Sing-Along Blog",
+	"movie_genre" : "Comedy|Drama|Musical|Sci-Fi",
+	"production_year" : 2007,
+	"budget" : 9116
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b40c1"),
+	"movie_name" : "Carnal Knowledge",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 2009,
+	"budget" : 9551
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b40ca"),
+	"movie_name" : "It Had to Be You",
+	"movie_genre" : "Comedy|Romance",
+	"production_year" : 2012,
+	"budget" : 9951
+}
+Type "it" for more
+> db.users.find({$or:[{year:{$not:{$eq:2000}}},{budget:{$not:{$eq:10000}}}]}).pretty()
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f93"),
+	"movie_name" : "House of Sand (Casa de Areia)",
+	"movie_genre" : "Drama",
+	"production_year" : 1993,
+	"budget" : 19064
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f94"),
+	"movie_name" : "Gentlemen Prefer Blondes",
+	"movie_genre" : "Comedy|Musical|Romance",
+	"production_year" : 2006,
+	"budget" : 9774
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f95"),
+	"movie_name" : "Better Than Sex",
+	"movie_genre" : "Comedy|Romance",
+	"production_year" : 2020,
+	"budget" : 14115
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f96"),
+	"movie_name" : "Pollyanna",
+	"movie_genre" : "Children|Comedy|Drama",
+	"production_year" : 2005,
+	"budget" : 9294
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f97"),
+	"movie_name" : "Organization, The",
+	"movie_genre" : "Crime|Drama|Thriller",
+	"production_year" : 2002,
+	"budget" : 9323
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f98"),
+	"movie_name" : "Not as a Stranger",
+	"movie_genre" : "Drama",
+	"production_year" : 1996,
+	"budget" : 11903
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f99"),
+	"movie_name" : "Sommer der Gaukler, Der",
+	"movie_genre" : "Comedy",
+	"production_year" : 2006,
+	"budget" : 11065
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9a"),
+	"movie_name" : "Read It and Weep",
+	"movie_genre" : "Comedy",
+	"production_year" : 2019,
+	"budget" : 11151
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9b"),
+	"movie_name" : "Body Bags",
+	"movie_genre" : "Comedy|Horror|Sci-Fi|Thriller",
+	"production_year" : 2001,
+	"budget" : 16485
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9c"),
+	"movie_name" : "Prefab People, The (Panelkapcsolat)",
+	"movie_genre" : "Drama",
+	"production_year" : 1994,
+	"budget" : 10998
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9d"),
+	"movie_name" : "Parenthood",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 2011,
+	"budget" : 11112
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9e"),
+	"movie_name" : "Otaku",
+	"movie_genre" : "Documentary",
+	"production_year" : 2011,
+	"budget" : 12049
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9f"),
+	"movie_name" : "Julia",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 2011,
+	"budget" : 13927
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa0"),
+	"movie_name" : "Johnny Apollo",
+	"movie_genre" : "Crime|Drama|Film-Noir|Romance",
+	"production_year" : 1997,
+	"budget" : 17661
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa1"),
+	"movie_name" : "Boy",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 2002,
+	"budget" : 15875
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa2"),
+	"movie_name" : "Starlift",
+	"movie_genre" : "(no genres listed)",
+	"production_year" : 1990,
+	"budget" : 16463
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa3"),
+	"movie_name" : "Love Me Tonight",
+	"movie_genre" : "Comedy|Musical",
+	"production_year" : 1994,
+	"budget" : 11732
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa4"),
+	"movie_name" : "God's Comedy (A Comédia de Deus)",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 1995,
+	"budget" : 15566
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa5"),
+	"movie_name" : "Third World Cop",
+	"movie_genre" : "Action",
+	"production_year" : 2001,
+	"budget" : 18799
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa6"),
+	"movie_name" : "Clean and Sober",
+	"movie_genre" : "Drama",
+	"production_year" : 2002,
+	"budget" : 16796
+}
+Type "it" for more
+>  db.users.find({year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).pretty()
+>  db.users.find({year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).pretty()
+> db.users.find().sort({year:-1,movie_name:-1}).pretty()
+{
+	"_id" : ObjectId("615406fb401c5ac9648b402e"),
+	"movie_name" : "[REC]³ 3 Génesis",
+	"movie_genre" : "Horror|Thriller",
+	"production_year" : 2017,
+	"budget" : 17736
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b409c"),
+	"movie_name" : "You Ain't Seen Nothin' Yet (Vous n'avez encore rien vu)",
+	"movie_genre" : "Drama",
+	"production_year" : 1997,
+	"budget" : 17568
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b40e0"),
+	"movie_name" : "Year of the Dog",
+	"movie_genre" : "Comedy|Drama|Romance",
+	"production_year" : 2000,
+	"budget" : 10854
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4023"),
+	"movie_name" : "Year of Living Dangerously, The",
+	"movie_genre" : "Drama|Romance|War",
+	"production_year" : 2013,
+	"budget" : 13710
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4015"),
+	"movie_name" : "Wyoming Renegades",
+	"movie_genre" : "Romance|Western",
+	"production_year" : 2007,
+	"budget" : 10892
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b405a"),
+	"movie_name" : "Wooden Bridge, The",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 1997,
+	"budget" : 9104
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4106"),
+	"movie_name" : "Wives and Lovers",
+	"movie_genre" : "Comedy",
+	"production_year" : 2007,
+	"budget" : 15362
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b40d3"),
+	"movie_name" : "With Friends Like These...",
+	"movie_genre" : "Comedy",
+	"production_year" : 1994,
+	"budget" : 13974
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b40d7"),
+	"movie_name" : "Wisconsin Death Trip",
+	"movie_genre" : "Documentary",
+	"production_year" : 1990,
+	"budget" : 14485
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b414d"),
+	"movie_name" : "Wild China",
+	"movie_genre" : "Documentary",
+	"production_year" : 1998,
+	"budget" : 16413
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b416d"),
+	"movie_name" : "Widow of St. Pierre, The (Veuve de Saint-Pierre, La)",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 2009,
+	"budget" : 14505
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b40a0"),
+	"movie_name" : "Wicked",
+	"movie_genre" : "Thriller",
+	"production_year" : 2010,
+	"budget" : 11679
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4183"),
+	"movie_name" : "Whole Wide World, The",
+	"movie_genre" : "Drama",
+	"production_year" : 1990,
+	"budget" : 19743
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b40af"),
+	"movie_name" : "Whistling in the Dark",
+	"movie_genre" : "Comedy|Mystery",
+	"production_year" : 2000,
+	"budget" : 12580
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4072"),
+	"movie_name" : "While You Were Sleeping",
+	"movie_genre" : "Comedy|Romance",
+	"production_year" : 2010,
+	"budget" : 18530
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b40c3"),
+	"movie_name" : "Where the Wild Things Are",
+	"movie_genre" : "Adventure|Children|Drama|Fantasy|IMAX",
+	"production_year" : 2005,
+	"budget" : 10879
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b407b"),
+	"movie_name" : "Where Are My Children?",
+	"movie_genre" : "Drama",
+	"production_year" : 1992,
+	"budget" : 13983
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b409e"),
+	"movie_name" : "West of the Divide",
+	"movie_genre" : "Romance|Western",
+	"production_year" : 1994,
+	"budget" : 18984
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4062"),
+	"movie_name" : "Werner - Volles Rooäää",
+	"movie_genre" : "Animation|Comedy",
+	"production_year" : 2017,
+	"budget" : 18074
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4164"),
+	"movie_name" : "We Were Here",
+	"movie_genre" : "Documentary",
+	"production_year" : 2002,
+	"budget" : 16925
+}
+Type "it" for more
+> db.users.find().sort({year:-1,movie_name:-1}).skip(10).limit(5).pretty()
+{
+	"_id" : ObjectId("615406fb401c5ac9648b416d"),
+	"movie_name" : "Widow of St. Pierre, The (Veuve de Saint-Pierre, La)",
+	"movie_genre" : "Drama|Romance",
+	"production_year" : 2009,
+	"budget" : 14505
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b40a0"),
+	"movie_name" : "Wicked",
+	"movie_genre" : "Thriller",
+	"production_year" : 2010,
+	"budget" : 11679
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4183"),
+	"movie_name" : "Whole Wide World, The",
+	"movie_genre" : "Drama",
+	"production_year" : 1990,
+	"budget" : 19743
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b40af"),
+	"movie_name" : "Whistling in the Dark",
+	"movie_genre" : "Comedy|Mystery",
+	"production_year" : 2000,
+	"budget" : 12580
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b4072"),
+	"movie_name" : "While You Were Sleeping",
+	"movie_genre" : "Comedy|Romance",
+	"production_year" : 2010,
+	"budget" : 18530
+}
+> db.users.find().pretty()
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f93"),
+	"movie_name" : "House of Sand (Casa de Areia)",
+	"movie_genre" : "Drama",
+	"production_year" : 1993,
+	"budget" : 19064
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f94"),
+	"movie_name" : "Gentlemen Prefer Blondes",
+	"movie_genre" : "Comedy|Musical|Romance",
+	"production_year" : 2006,
+	"budget" : 9774
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f95"),
+	"movie_name" : "Better Than Sex",
+	"movie_genre" : "Comedy|Romance",
+	"production_year" : 2020,
+	"budget" : 14115
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f96"),
+	"movie_name" : "Pollyanna",
+	"movie_genre" : "Children|Comedy|Drama",
+	"production_year" : 2005,
+	"budget" : 9294
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f97"),
+	"movie_name" : "Organization, The",
+	"movie_genre" : "Crime|Drama|Thriller",
+	"production_year" : 2002,
+	"budget" : 9323
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f98"),
+	"movie_name" : "Not as a Stranger",
+	"movie_genre" : "Drama",
+	"production_year" : 1996,
+	"budget" : 11903
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f99"),
+	"movie_name" : "Sommer der Gaukler, Der",
+	"movie_genre" : "Comedy",
+	"production_year" : 2006,
+	"budget" : 11065
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9a"),
+	"movie_name" : "Read It and Weep",
+	"movie_genre" : "Comedy",
+	"production_year" : 2019,
+	"budget" : 11151
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9b"),
+	"movie_name" : "Body Bags",
+	"movie_genre" : "Comedy|Horror|Sci-Fi|Thriller",
+	"production_year" : 2001,
+	"budget" : 16485
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9c"),
+	"movie_name" : "Prefab People, The (Panelkapcsolat)",
+	"movie_genre" : "Drama",
+	"production_year" : 1994,
+	"budget" : 10998
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9d"),
+	"movie_name" : "Parenthood",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 2011,
+	"budget" : 11112
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9e"),
+	"movie_name" : "Otaku",
+	"movie_genre" : "Documentary",
+	"production_year" : 2011,
+	"budget" : 12049
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3f9f"),
+	"movie_name" : "Julia",
+	"movie_genre" : "Drama|Thriller",
+	"production_year" : 2011,
+	"budget" : 13927
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa0"),
+	"movie_name" : "Johnny Apollo",
+	"movie_genre" : "Crime|Drama|Film-Noir|Romance",
+	"production_year" : 1997,
+	"budget" : 17661
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa1"),
+	"movie_name" : "Boy",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 2002,
+	"budget" : 15875
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa2"),
+	"movie_name" : "Starlift",
+	"movie_genre" : "(no genres listed)",
+	"production_year" : 1990,
+	"budget" : 16463
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa3"),
+	"movie_name" : "Love Me Tonight",
+	"movie_genre" : "Comedy|Musical",
+	"production_year" : 1994,
+	"budget" : 11732
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa4"),
+	"movie_name" : "God's Comedy (A Comédia de Deus)",
+	"movie_genre" : "Comedy|Drama",
+	"production_year" : 1995,
+	"budget" : 15566
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa5"),
+	"movie_name" : "Third World Cop",
+	"movie_genre" : "Action",
+	"production_year" : 2001,
+	"budget" : 18799
+}
+{
+	"_id" : ObjectId("615406fb401c5ac9648b3fa6"),
+	"movie_name" : "Clean and Sober",
+	"movie_genre" : "Drama",
+	"production_year" : 2002,
+	"budget" : 16796
+}
+Type "it" for more

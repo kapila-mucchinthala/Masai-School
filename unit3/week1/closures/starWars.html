@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:black;
+        }
+
+        input{
+            width:345px;
+            height: 30px;
+            padding: 2px;
+            border-radius: 20px;
+            font-size: 18px;
+            padding-left: 10px;
+            
+        }
+
+        #names{
+           width: 356px;
+            height: 200px;
+            border: 1px solid black;
+            border-top: none;
+            overflow: scroll;
+            background-color:white;
+        }
+
+        .container{
+            margin-left: 38%;
+        }
+       h1{
+           color:white;
+           margin-left: 100px;
+           
+       }
+       #charName{
+           margin-left:10px;
+           color: rgb(165, 11, 11);
+           font-size: 18px;
+       }
+       #yob{
+           margin-left:10px;
+           color: rgb(0, 68, 255);
+           font-size: 14px;
+       }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Stars Wars</h1>
+    <input type="text" oninput="throttleFun()" id="query"/>
+    <div id="names"></div>
+    </div>
+</body>
+</html>
+<script>
+    let names_div = document.getElementById("names");
+    
+
+var timerId;
+
+function throttleFun() {
+  if (timerId) {
+    return false;
+  }
+
+  timerId = setTimeout(() => {
+    main();
+    timerId = undefined;
+  }, 500);
+}
+
+    async function searchName(){
+        let query = document.getElementById("query").value;
+        if(query.length < 2){
+            return false;
+        }   
+        let response = await fetch(`https://swapi.dev/api/people/?search=${query}`);
+        let data = await response.json();
+        //  console.log(data.results);
+        return data.results;
+        
+    }
+    function appendData(results){
+        names_div.innerHTML = null;
+        results.forEach(({ name, birth_year }) => {
+            let name_1 = document.createElement("p");
+            name_1.setAttribute("id", "charName");
+            let year = document.createElement("p");
+            year.setAttribute("id", "yob");
+            name_1.innerText = name;
+            year.innerText = birth_year;
+            names_div.append(name_1,year);
+
+        });
+    }
+    async function main() {
+        let names = await searchName();
+        // console.log(names);
+        appendData(names);
+    }
+
+
+</script>
