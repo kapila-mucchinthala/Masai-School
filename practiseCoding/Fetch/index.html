@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Weather for a particular city by city name</h1>
+    <input type="text" id='city' placeholder="Enter city name"/>
+    <button onclick="weather()">Submit</button>
+    <div id='box'></div>
+</body>
+</html>
+<script>
+
+    // fetch("https://reqres.in/api/users?page=1")
+    // .then(function(response) {
+    //     return response.json();   
+    // })
+    // .then(function(response) {
+    //     console.log(response.data);
+    // })
+    // .catch(function(error) {
+    //     console.log(error);
+    // })
+
+    // async function test(){
+    //     let data = await fetch("https://fakestoreapi.com/products/category/jewelery");
+    //     console.log(data);
+    //     let response = await data.json();
+    //     console.log(response);
+    //     // console.log(response.data);
+    // }
+    // test()
+
+// //////////////////////////////////////////////////////////////////
+
+// fetch("https://fakestoreapi.com/products/category/jewelery")
+//     .then(function(response) {
+//         // console.log(response);
+//         return response.json();   
+//         console.log(response.json());
+//     })
+//     .then(function(response) {
+//         console.log(response);
+//     })
+//     .catch(function(error) {
+//         console.log(error);
+//     })
+
+
+// //////////////////////////////////////////////////////////////////
+
+
+// weather for a particular city by city name
+
+
+async function weather(){
+
+    try { 
+
+        let box = document.getElementById('box');
+        let city = document.getElementById('city').value;
+        // console.log(city);
+        let data = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6b4dafff7207e0670d9c32c63ddd6cc8`);
+        // console.log(data);
+        let response = await data.json();
+        console.log(response);
+        console.log(response.main.temp);
+        let p = document.createElement('p');
+        p.innerHTML = response.main.temp;
+        box.append(p);
+
+    }
+    catch (err) {
+        console.log(err);
+    }
+    
+}
+</script>
+

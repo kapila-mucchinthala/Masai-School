@@ -1,0 +1,14 @@
+.nav-bar {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .nav-bar > button {
+    font-size: 1.17em;
+    font-weight: bold;
+    background: none;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+  

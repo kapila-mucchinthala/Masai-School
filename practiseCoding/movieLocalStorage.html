@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    
+</style>
+
+<body>
+    <form onsubmit="submitForm(event)">
+        <input type="text" placeholder="Enter movie name" id="name"/>
+        <input type="number" placeholder="Enter your rating" id="rating"/>
+        <input type="submit" id="submit" />
+
+    </form>
+</body>
+</html>
+<script>
+    function submitForm(e) {
+        e.preventDefault();
+        
+        const movie_object = {
+            name: document.getElementById('name').value,
+            rating: document.getElementById('rating').value,
+        }
+        
+        const movie_json = JSON.stringify(movie_object);
+        // console.log(movie_json);
+        localStorage.setItem('myFavouriteMovie', movie_json);
+
+
+    }
+
+</script>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container{
+        width: 900px;
+        height: 1000px;
+        border: 25px solid rgb(151, 17, 17);
+        border-radius: 15px;
+        overflow: scroll;
+        padding: 10px;
+        margin: auto;
+    }
+    #box{
+        height: 50px;
+        padding: 10px;
+        font-size: 62px;
+        color:rgb(151, 17, 17);
+        padding-left: 30px;
+    }
+    .h{
+        color:rgb(151, 17, 17);
+        text-align: center;
+        margin-top: 3%;
+        font-size: 62px;
+        margin-bottom: 2%;
+    }
+    
+</style>
+<body>
+    <div class="h">Infinite Scrolling</div>
+    <div id='container' onscroll="scrolling()">
+        <div id='box'></div>
+    </div>
+</body>
+</html>
+<script>
+    let box = document.getElementById('box');
+    var count=0;
+function display(){
+    for(let i=1;i<=25;i++){
+        count++;
+        let p = document.createElement('p');
+        p.innerText= `Masai Student ${count}`;
+        box.append(p);
+    }
+}
+display()
+function scrolling(){
+    count++;
+        let p = document.createElement('p');
+        p.innerText= `Masai Student ${count}`;
+        box.append(p);
+}
+    
+</script>
